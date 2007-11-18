@@ -9,7 +9,7 @@
 Summary:	JavaHelp
 Name:		javahelp
 Version:	2.0.05
-Release:	0.1
+Release:	0.2
 Epoch:		0
 License:	Open Source
 Group:		Development/Languages/Java
@@ -66,8 +66,14 @@ install -d $RPM_BUILD_ROOT{%{_javadir},%{_bindir},%{_datadir}/%{name}}
 install javahelp/bin/jhindexer $RPM_BUILD_ROOT%{_bindir}/jhindexer
 install javahelp/bin/jhsearch $RPM_BUILD_ROOT%{_bindir}/jhsearch
 
-install javahelp/lib/jhall.jar $RPM_BUILD_ROOT%{_javadir}/%{name}-%{version}.jar
-ln -s %{name}-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/%{name}.jar
+install javahelp/lib/jhall.jar $RPM_BUILD_ROOT%{_javadir}/jhall-%{version}.jar
+install javahelp/lib/jh.jar $RPM_BUILD_ROOT%{_javadir}/jh-%{version}.jar
+install javahelp/lib/jhbasic.jar $RPM_BUILD_ROOT%{_javadir}/jhbasic-%{version}.jar
+install javahelp/lib/jsearch.jar $RPM_BUILD_ROOT%{_javadir}/jsearch-%{version}.jar
+ln -s jhall-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/jhall.jar
+ln -s jh-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/jh.jar
+ln -s jhbasic-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/jhbasic.jar
+ln -s jhsearch-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/jhsearch.jar
 cp -a javahelp/lib/dtd $RPM_BUILD_ROOT%{_datadir}/%{name}
 cp -a demos $RPM_BUILD_ROOT%{_datadir}/%{name}
 
@@ -88,8 +94,7 @@ ln -nfs %{name}-%{version} %{_javadocdir}/%{name}
 %defattr(644,root,root,755)
 %doc README README.html
 %attr(755,root,root) %{_bindir}/*
-%{_javadir}/%{name}-%{version}.jar
-%{_javadir}/%{name}.jar
+%{_javadir}/*.jar
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/dtd
 
