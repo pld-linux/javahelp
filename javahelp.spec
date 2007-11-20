@@ -18,6 +18,7 @@ Source0:	%{name}-2_0_05.zip
 # Source0-md5:	b9b12989471f5858c982154335e1cc96
 NoSource:	0
 BuildRequires:	jpackage-utils >= 0:1.5
+BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	jpackage-utils >= 0:1.5
 BuildArch:	noarch
@@ -41,6 +42,7 @@ Documentation for %{name}.
 %package javadoc
 Summary:	Javadoc for %{name}
 Group:		Documentation
+Requires:	jpackage-utils
 
 %description javadoc
 Javadoc for %{name}.
