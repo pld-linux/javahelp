@@ -9,7 +9,7 @@
 Summary:	JavaHelp
 Name:		javahelp
 Version:	2.0.05
-Release:	0.2
+Release:	0.3
 Epoch:		0
 License:	Open Source
 Group:		Development/Languages/Java
@@ -75,7 +75,7 @@ install javahelp/lib/jsearch.jar $RPM_BUILD_ROOT%{_javadir}/jsearch-%{version}.j
 ln -s jhall-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/jhall.jar
 ln -s jh-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/jh.jar
 ln -s jhbasic-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/jhbasic.jar
-ln -s jhsearch-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/jhsearch.jar
+ln -s jsearch-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/jsearch.jar
 cp -a javahelp/lib/dtd $RPM_BUILD_ROOT%{_datadir}/%{name}
 cp -a demos $RPM_BUILD_ROOT%{_datadir}/%{name}
 
