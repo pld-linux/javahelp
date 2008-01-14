@@ -1,22 +1,22 @@
 # TODO
 # - compile from src.jar
-# - some specific License name? not Open Source as have to accept EULA when downloading?
 #
 # Conditional build:
 %bcond_without	javadoc		# don't build javadoc
 #
 %include	/usr/lib/rpm/macros.java
-Summary:	JavaHelp
+Summary:	JavaHelp - online help system
+Summary(pl.UTF-8):	JavaHelp - system pomocy online
 Name:		javahelp
 Version:	2.0.05
 Release:	0.3
 Epoch:		0
-License:	Open Source
+License:	restricted, non-distributable (Sun Binary Code License)
 Group:		Development/Languages/Java
-URL:		http://java.sun.com/products/javahelp/index.jsp
 Source0:	%{name}-2_0_05.zip
 # Source0-md5:	b9b12989471f5858c982154335e1cc96
 NoSource:	0
+URL:		http://java.sun.com/products/javahelp/index.jsp
 BuildRequires:	jpackage-utils >= 0:1.5
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
@@ -32,28 +32,48 @@ operating systems, and devices. Authors can also use the JavaHelp
 software to deliver online documentation for the Web and corporate
 intranet.
 
+%description -l pl.UTF-8
+JavaHelp to program z dostępnym kodem źródłowym będący w pełni
+funkcjonalnym, niezależnym od platformy, rozszerzalnym systemem
+pomocy pozwalającym umieszczać pomoc online w apletach, komponentach,
+aplikacjach, systemach operacyjnych i urządzeniach. Autorzy mogą także
+używać systemu JavaHelp do udostępniania dokumentacji online przez WWW
+i w sieciach korporacyjnych.
+
 %package manual
-Summary:	Manual for %{name}
+Summary:	Manual for JavaHelp
+Summary(pl.UTF-8):	Podręcznik do systemu JavaHelp
 Group:		Development/Languages/Java
 
 %description manual
-Documentation for %{name}.
+Manual for JavaHelp.
+
+%description manual -l pl.UTF-8
+Podręcznik do systemu JavaHelp.
 
 %package javadoc
-Summary:	Javadoc for %{name}
+Summary:	Javadoc for JavaHelp
+Summary(pl.UTF-8):	Dokumentacja Javadoc do systemu JavaHelp
 Group:		Documentation
 Requires:	jpackage-utils
 
 %description javadoc
-Javadoc for %{name}.
+Javadoc for JavaHelp.
+
+%description javadoc -l pl.UTF-8
+Dokumentacja Javadoc do systemu JavaHelp.
 
 %package demo
-Summary:	Demo for %{name}
+Summary:	Demo for JavaHelp
+Summary(pl.UTF-8):	Przykłady użycia systemu JavaHelp
 Group:		Development/Languages/Java
 Requires:	%{name} = %{version}-%{release}
 
 %description demo
-Demonstrations and samples for %{name}.
+Demonstrations and samples for JavaHelp.
+
+%description demo -l pl.UTF-8
+Przykłady użycia systemu JavaHelp.
 
 %prep
 %setup -q -n jh2.0
