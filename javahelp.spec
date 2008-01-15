@@ -14,7 +14,7 @@ Epoch:		0
 License:	restricted, non-distributable (Sun Binary Code License)
 Group:		Development/Languages/Java
 Source0:	%{name}-2_0_05.zip
-# Source0-md5:	b9b12989471f5858c982154335e1cc96
+# NoSource0-md5:	b9b12989471f5858c982154335e1cc96
 NoSource:	0
 URL:		http://java.sun.com/products/javahelp/index.jsp
 BuildRequires:	jpackage-utils >= 0:1.5
