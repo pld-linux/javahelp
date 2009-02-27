@@ -11,11 +11,10 @@ Name:		javahelp
 Version:	2.0.05
 Release:	0.3
 Epoch:		0
-License:	restricted, non-distributable (Sun Binary Code License)
+License:	GPL v2
 Group:		Development/Languages/Java
-Source0:	%{name}-2_0_05.zip
-# NoSource0-md5:	b9b12989471f5858c982154335e1cc96
-NoSource:	0
+Source0:	http://download.java.net/javadesktop/javahelp/javahelp2_0_05.zip
+# Source0-md5:	7bd68b82a1d5d8714856f661bd4d71a3
 URL:		http://java.sun.com/products/javahelp/index.jsp
 BuildRequires:	jpackage-utils >= 0:1.5
 BuildRequires:	rpm-javaprov
@@ -84,7 +83,7 @@ mv doc/api apidocs
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_javadir},%{_bindir},%{_datadir}/%{name}}
+install -d $RPM_BUILD_ROOT{%{_javadir},%{_bindir},%{_datadir}/%{name},%{_examplesdir}/%{name}-%{version}}
 install javahelp/bin/jhindexer $RPM_BUILD_ROOT%{_bindir}/jhindexer
 install javahelp/bin/jhsearch $RPM_BUILD_ROOT%{_bindir}/jhsearch
 
@@ -97,7 +96,7 @@ ln -s jh-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/jh.jar
 ln -s jhbasic-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/jhbasic.jar
 ln -s jsearch-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/jsearch.jar
 cp -a javahelp/lib/dtd $RPM_BUILD_ROOT%{_datadir}/%{name}
-cp -a demos $RPM_BUILD_ROOT%{_datadir}/%{name}
+cp -a demos/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 # javadoc
 %if %{with javadoc}
@@ -133,4 +132,4 @@ ln -nfs %{name}-%{version} %{_javadocdir}/%{name}
 
 %files demo
 %defattr(644,root,root,755)
-%{_datadir}/%{name}/demos
+%{_examplesdir}/%{name}-%{version}
